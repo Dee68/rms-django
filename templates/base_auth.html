@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <title>rms {% block title %}{% endblock %}</title>
+    <!-- Bootstrap core CSS -->
+<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+
+  </head>
+  <body>
+    
+<main role="main" class="container">
+{% block content %}
+
+{% endblock %}
+
+</main>
+
+
+    {% include 'partials/scripts.html' %}
+
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>  
+  </body>
+</html>
