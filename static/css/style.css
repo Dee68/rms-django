@@ -14,6 +14,21 @@ body {
     user-select: none;
   }
 
+  .top-content.carousel-item {
+    height: 100vh;
+    min-height: 400px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+/* .top-content .carousel-item-1 {
+  background-image: url('../images/gallery1.jpg');
+} */
+.top-content.carousel-item img {
+    height: 100%;
+    object-fit: cover;
+}
+
+
   @media (min-width: 768px) {
     .bd-placeholder-img-lg {
       font-size: 3.5rem;

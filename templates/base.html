@@ -40,7 +40,20 @@
           </li>
         </ul>
         <ul class="navbar-nav my-2 my-lg-0">
-          <li class="nav-item mr-sm-2"><a class="nav-link" href="{% url 'account:register' %}">Signup</a></li>
+          {% if user.id is not None %}
+          <li>
+            <span>
+          <!-- <img src="{% if userprofile.image %}{{ userprofile.image.url }}{% else %}{% static 'images/userimage.png' %}{% endif %}" style="height:40px; border-radius:30%;"> -->
+          </span>
+            <a class="nav-link" href="{% url 'account:logout' %}">logout</a>
+           </li>
+           {% else %} 
+        
+           <li class="nav-item mr-sm-2"><a class="nav-link" href="{% url 'account:signin' %}">Login</a></li>
+           <li class="nav-item mr-sm-2"><a class="nav-link" href="{% url 'account:register' %}">Signup</a></li>
+
+          {% endif %}
+          
         </ul>
         <!-- <form class="form-inline my-2 my-lg-0">
           <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
@@ -59,6 +72,7 @@
 
     {% include 'partials/scripts.html' %}
 
-    <script src="{% static 'js/bootstrap.bundle.min.js' %}" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>  
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script> 
+    {% include 'partials/timer.html' %} 
   </body>
 </html>
